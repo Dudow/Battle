@@ -5,9 +5,10 @@ const userScore_span = document.getElementById("user-score")
 const computerScore_span = document.getElementById("computer-score")
 const scoreBoard_div = document.querySelector(".score-board")
 const result_p = document.querySelector(".result > p")
-const rock_div = document.getElementById("rock")
-const paper_div = document.getElementById("paper")
-const scissors_div = document.getElementById("scissors")
+
+const first_div = document.getElementById("first")
+const second_div = document.getElementById("second")
+const third_div = document.getElementById("third")
 
 function computerChoice(){
     const choices = ['rock', 'paper', 'scissors']
@@ -19,26 +20,26 @@ function computerChoice(){
 function win(userChoice, computerChoice){
     userScore_span.innerHTML = ++userScore
     result_p.innerHTML = `${userChoice}${"(you)".fontsize(3).sub()} beats ${computerChoice}${"(comp)".fontsize(3).sub()}. You win! 😎`
-    document.getElementById(userChoice).classList.add('green-glow')
+    //document.getElementById(userChoice).classList.add('green-glow')
     setTimeout(() => {
-        document.getElementById(userChoice).classList.remove('green-glow')
+        //document.getElementById(userChoice).classList.remove('green-glow')
     }, 300);
 }
 
 function lose(userChoice, computerChoice){
     computerScore_span.innerHTML = ++computerScore
     result_p.innerHTML = `${computerChoice}${"(comp)".fontsize(3).sub()} beats ${userChoice}${"(you)".fontsize(3).sub()}. You lose! 😈`
-    document.getElementById(userChoice).classList.add('red-glow')
+    //document.getElementById(userChoice).classList.add('red-glow')
     setTimeout(() => {
-        document.getElementById(userChoice).classList.remove('red-glow')
+        //document.getElementById(userChoice).classList.remove('red-glow')
     }, 300);
 }
 
 function draw(userChoice, computerChoice){
     result_p.innerHTML = `${computerChoice}${"(comp)".fontsize(3).sub()} and ${userChoice}${"(you)".fontsize(3).sub()}. Wow, it's a draw! 🤝`
-    document.getElementById(userChoice).classList.add('gray-glow')
+    //document.getElementById(userChoice).classList.add('gray-glow')
     setTimeout(() => {
-        document.getElementById(userChoice).classList.remove('gray-glow')
+        //document.getElementById(userChoice).classList.remove('gray-glow')
     }, 300);
 }
 
@@ -65,21 +66,17 @@ function game(userChoice){
 }
 
 function main(){
-    rock_div.addEventListener('click', () => {
+    first_div.addEventListener('click', () => {
         game("rock")
     })
     
-    paper_div.addEventListener('click', () => {
+    second_div.addEventListener('click', () => {
         game("paper")
     })
     
-    scissors_div.addEventListener('click', () => {
+    third_div.addEventListener('click', () => {
         game("scissors")
     })
 }
 
 main()
-
-
-
-
